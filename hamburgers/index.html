@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Hamburgers</title>
+  </head>
+  <body>
+    <div class="container" data-animate="false">
+      <div class="bar top"></div>
+      <div class="bar center"></div>
+      <div class="bar bottom"></div>
+    </div>
+  </body>
+  <script>
+    const container = document.querySelector(".container");
+    const topBar = container.querySelector(".top");
+    const centerBar = container.querySelector(".center");
+    const bottomBar = container.querySelector(".bottom");
+    function makeX() {
+      topBar.style.top = "15px";
+      topBar.style.transform = "rotate(45deg)";
+
+      centerBar.style.transform = "scale(0)";
+
+      bottomBar.style.bottom = "15px";
+      bottomBar.style.transform = "rotate(-45deg)";
+    }
+    function undoX() {
+      topBar.style.top = "5px";
+      topBar.style.transform = "rotate(0deg)";
+
+      centerBar.style.transform = "scale(1)";
+
+      bottomBar.style.bottom = "5px";
+      bottomBar.style.transform = "rotate(0deg)";
+    }
+
+    function transformBurger() {
+      if (container.dataset.animate === "false") {
+        makeX();
+        container.dataset.animate = "true";
+      } else {
+        undoX();
+        container.dataset.animate = "false";
+      }
+    }
+    container.addEventListener("click", transformBurger);
+  </script>
+</html>

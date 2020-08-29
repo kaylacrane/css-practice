@@ -1,0 +1,38 @@
+.container {
+  height: 35px;
+  width: 45px;
+  position: relative;
+}
+/* .container:hover .top {
+  top: 15px;
+  transform: rotate(45deg);
+}
+.container:hover .center {
+  top: 15px;
+  transform: scale(0);
+}
+.container:hover .bottom {
+  bottom: 15px;
+  transform: rotate(-45deg);
+} */
+.bar {
+  background: green;
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  border-radius: 13px;
+  box-shadow: 0 1px 3px 1px rgb(217, 220, 223);
+  /* transition: all 2s ease; */
+}
+.top {
+  top: 5px;
+  transition: all 0.8s;
+}
+.center {
+  top: 15px;
+  transition: all 0.5s;
+}
+.bottom {
+  bottom: 5px;
+  transition: all 0.8s;
+}

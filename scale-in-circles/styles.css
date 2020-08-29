@@ -1,0 +1,93 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+}
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: slateblue;
+}
+
+.circle {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 20%;
+}
+.greeting {
+  transform: rotate(-90deg);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 40px;
+  color: purple;
+  font-weight: bold;
+}
+.top {
+  /* height: 60px;
+  width: 60px; */
+  animation: scaleIn1 4s ease-in-out alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  z-index: 10;
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 0 15px plum;
+  background-color: plum;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.center {
+  /* height: 130px;
+  width: 130px; */
+  animation: scaleIn2 4s ease-in-out alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  z-index: 5;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 0 15px seagreen;
+  background-color: seagreen;
+}
+.bottom {
+  animation: scaleIn3 4s ease-in-out alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  height: 300px;
+  width: 300px;
+  box-shadow: 0 0 15px white;
+  background-color: white;
+}
+
+@keyframes scaleIn1 {
+  0%,
+  70% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(90deg);
+  }
+}
+
+@keyframes scaleIn2 {
+  0%,
+  40% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(45deg);
+  }
+}
+
+@keyframes scaleIn3 {
+  0%,
+  10% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
