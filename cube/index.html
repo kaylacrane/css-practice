@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Cube</h2>
+    <div class="scene">
+      <div class="cube">
+        <div class="cube__face cube__face--front">front</div>
+        <div class="cube__face cube__face--back">back</div>
+        <div class="cube__face cube__face--right">right</div>
+        <div class="cube__face cube__face--left">left</div>
+        <div class="cube__face cube__face--top">top</div>
+        <div class="cube__face cube__face--bottom">bottom</div>
+      </div>
+    </div>
+    <h2>Triangle</h2>
+    <div class="scene2">
+      <div class="triangle">
+        <div class="triangle__face triangle__face--front"></div>
+        <div class="triangle__face triangle__face--back"></div>
+        <div class="triangle__face triangle__face--right"></div>
+        <div class="triangle__face triangle__face--left"></div>
+        <div class="triangle__face triangle__face--bottom"></div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+    }
+    .scene {
+      width: 200px;
+      height: 200px;
+      perspective: 600px;
+    }
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      transition: transform 4s ease-in-out;
+    }
+    .cube:hover {
+      transform: rotateY(395deg) rotateX(-395deg);
+    }
+    .cube__face {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      opacity: 0.9;
+    }
+    .cube__face--front {
+      background: pink;
+      transform: rotateY(0deg) translateZ(100px);
+    }
+    .cube__face--right {
+      background: darkolivegreen;
+      transform: rotateY(90deg) translateZ(100px);
+    }
+    .cube__face--back {
+      background: orange;
+      transform: rotateY(180deg) translateZ(100px);
+    }
+    .cube__face--left {
+      background: lightblue;
+      transform: rotateY(-90deg) translateZ(100px);
+    }
+    .cube__face--top {
+      background: lightseagreen;
+      transform: rotateX(90deg) translateZ(100px);
+    }
+    .cube__face--bottom {
+      background: red;
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    /* triangle */
+    .scene2 {
+      width: 200px;
+      height: 200px;
+      perspective: 600px;
+    }
+    .triangle {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      transition: transform 4s ease-in-out;
+      transform: rotateY(90deg);
+    }
+    .triangle:hover {
+      transform: rotateY(-145deg) rotateX(-335deg);
+    }
+    .triangle__face {
+      position: absolute;
+      opacity: 0.9;
+      border: 100px solid transparent;
+    }
+    .triangle__face--front {
+      transform: rotateY(0deg) translateZ(100px);
+      bottom: -10%;
+      border-bottom: 200px solid pink;
+      -webkit-transform: translateZ(25px) rotateX(30deg);
+    }
+    .triangle__face--right {
+      transform: rotateY(90deg) translateZ(100px);
+      bottom: 0%;
+      border-bottom: 200px solid darkolivegreen;
+      bottom: -40px;
+      right: 150px;
+      -webkit-transform: rotateY(-270deg) translateX(100px) rotateX(30deg);
+      -webkit-transform-origin: top right;
+    }
+    .triangle__face--back {
+      transform: rotateY(180deg) translateZ(100px);
+      bottom: -10%;
+      border-bottom: 200px solid orange;
+      -webkit-transform: translateZ(-25px) rotateY(180deg) rotateX(30deg);
+    }
+    .triangle__face--left {
+      bottom: -10%;
+      left: -12%;
+      border-bottom: 200px solid lightblue;
+
+      -webkit-transform: rotateY(270deg) translateX(-100px) rotateX(30deg);
+      -webkit-transform-origin: center left;
+      bottom: -20px;
+      left: 75px;
+    }
+
+    .triangle__face--bottom {
+      background: red;
+      transform: rotateX(-90deg) translateZ(100px);
+    }
+  </style>
+</html>

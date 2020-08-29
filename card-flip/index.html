@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS - Card Flip</title>
+  </head>
+  <body>
+    <h2>Flips horizontally</h2>
+    <div class="scene">
+      <div class="card">
+        <div class="card__face card__face--front">front</div>
+        <div class="card__face card__face--back">back</div>
+      </div>
+    </div>
+    <h2>Slide Flip</h2>
+    <div class="scene2">
+      <div class="card2">
+        <div class="card__face2 card__face--front2">front</div>
+        <div class="card__face2 card__face--back2">back</div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .scene {
+      width: 200px;
+      height: 260px;
+      perspective: 600px;
+    }
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+    }
+    .card__face {
+      position: absolute;
+      font: 20px Arial, sans-serif;
+      color: white;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      backface-visibility: hidden;
+    }
+    .card__face--front {
+      background: blue;
+    }
+    .card__face--back {
+      background: purple;
+      transform: rotateY(180deg);
+    }
+    .card:hover {
+      transform: rotateY(180deg);
+    }
+
+    /*card 2 */
+    .scene2 {
+      width: 200px;
+      height: 260px;
+      perspective: 600px;
+    }
+    .card2 {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 1s;
+      transform-style: preserve-3d;
+      transform-origin: center right;
+    }
+    .card__face2 {
+      position: absolute;
+      font: 20px Arial, sans-serif;
+      color: white;
+      text-align: center;
+      height: 100%;
+      width: 100%;
+      backface-visibility: hidden;
+    }
+    .card__face--front2 {
+      background: green;
+    }
+    .card__face--back2 {
+      background: goldenrod;
+      transform: rotateY(180deg);
+    }
+    .card2:hover {
+      transform: rotateY(180deg);
+      transform: translateX(-100%) rotateY(-180deg);
+    }
+  </style>
+</html>
