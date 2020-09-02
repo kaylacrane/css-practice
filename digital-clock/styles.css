@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: lightslategray;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.clock {
+  position: relative;
+  box-sizing: content-box;
+  background-color: darkmagenta;
+  height: 350px;
+  width: 350px;
+  border-radius: 50%;
+  border: 40px solid white;
+  overflow: hidden;
+}
+.seconds-bar {
+  width: 100%;
+  height: 100%;
+  border: 13px dotted plum;
+  border-radius: 50%;
+}
+.face {
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.date {
+  font-size: 30px;
+}
+.time {
+  font-size: 56px;
+  color: mediumslateblue;
+  font-weight: bold;
+}
