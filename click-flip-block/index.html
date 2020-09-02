@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Scroll-to-Flip Box</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="cube">
+        <div class="front">
+          <span>Have something interesting to share?</span>
+          <a> Get in touch</a>
+        </div>
+        <div class="bottom">
+          <span>Want to get to know me?</span
+          ><a>These random facts might help</a>
+        </div>
+        <div class="left">
+          <span>English teacher </span><span> turned programmer </span>
+          <a>And I've got a cool CV</a>
+        </div>
+        <div class="right">
+          <span>Skills? </span> <span>Yeah, I've got 'em</span
+          ><a>Here's a few</a>
+        </div>
+        <div class="back">Thanks for your visit!</div>
+        <div class="top">
+          <span>Have a spare Front End job lying around?</span>
+          <a>I'm interested!</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      const cube = document.querySelector(".cube");
+      let clicks = parseInt(Math.random() * 5);
+      function rotate() {
+        const rotation = 90;
+        if (clicks === 1) {
+          cube.style.transform = `rotateX(${
+            rotation * clicks * 2
+          }deg) rotateY(-90deg)`;
+        } else if (clicks === 2) {
+          cube.style.transform = `rotateX(${
+            rotation * clicks * 2
+          }deg) rotateY(-90deg)`;
+        } else if (clicks === 3) {
+          cube.style.transform = `rotateY(${
+            rotation * clicks * 2
+          }deg) rotateX(90deg)`;
+        } else if (clicks === 4) {
+          cube.style.transform = `rotateY(180deg) rotateX(-90deg)`;
+        } else if (clicks === 5) {
+          cube.style.transform = `rotateY(0deg) rotateX(0deg)`;
+          clicks = 0;
+        }
+        clicks++;
+        console.log(clicks);
+      }
+      rotate();
+      cube.addEventListener("click", rotate);
+    </script>
+  </body>
+</html>
