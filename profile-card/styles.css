@@ -2,7 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
 }
 .container {
   height: 100vh;
@@ -19,7 +20,7 @@
 .card {
   color: darkgreen;
   background: white;
-  height: 400px;
+  height: 450px;
   width: 450px;
   box-shadow: 0 5px 20px grey;
   display: grid;
@@ -35,21 +36,56 @@
   align-items: center;
 }
 .img-container {
-  height: 150px;
-  width: 150px;
+  position: relative;
+  height: 160px;
+  width: 160px;
   overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid green;
   margin-bottom: 15px;
   margin-top: 35px;
 }
+.img-container:hover .circle1 {
+  transform: rotateZ(180deg);
+}
+.img-container:hover .circle2 {
+  transform: rotateZ(-540deg);
+}
+.circle1 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 158px;
+  height: 158px;
+  top: 2px;
+  left: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: green green green transparent;
+  border-radius: 50%;
+  transition: transform 1.5s ease-in-out;
+}
+.circle2 {
+  position: absolute;
+  box-sizing: border-box;
+  width: 150px;
+  height: 150px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: green transparent green green;
+  border-radius: 50%;
+  transition: transform 1.5s ease-in-out;
+  top: 5px;
+  left: 5px;
+}
 .image {
-  height: 100%;
-  width: 100%;
-  background-image: url("https://100dayscss.com/codepen/jessica-potter.jpg");
+  height: 140px;
+  width: 140px;
+  margin: 3px;
+  position: relative;
+  background-image: url("https://bit.ly/2F0YYT1");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 50%;
+  margin: 10px;
 }
 .info {
   margin-bottom: 30px;
@@ -60,7 +96,7 @@
 }
 .name {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 20px;
 }
 .job {
   font-weight: lighter;
@@ -69,13 +105,22 @@
   margin-bottom: 35px;
 }
 .button {
+  text-decoration: none;
   border: 1px solid darkgreen;
+  color: darkgreen;
   width: 150px;
   height: 35px;
   border-radius: 20px;
   text-align: center;
   line-height: 30px;
   margin: 10px;
+  transition: all 0.5s;
+  display: block;
+}
+
+.button:hover {
+  background-color: darkgreen;
+  color: white;
 }
 .stats-block {
   display: grid;
@@ -83,14 +128,26 @@
   grid-gap: 3px;
 }
 .square {
-  background-color: lightgreen;
+  background-color: rgba(145, 238, 145, 0.4);
   display: grid;
   place-items: center;
   text-align: center;
+  cursor: pointer;
+  transition: all 0.8s;
+}
+.square:hover {
+  background-color: rgba(145, 238, 145, 0.8);
 }
 .stats-number {
+  text-decoration: none;
   display: block;
+  font-weight: bold;
+  font-size: 16px;
+  color: darkgreen;
 }
 .stats-type {
+  text-decoration: none;
   display: block;
+  font-size: 14px;
+  color: darkgreen;
 }

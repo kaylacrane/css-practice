@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--100 Days of CSS: https://100dayscss.com/?dayIndex=18 -->
+    <div class="page">
+      <form class="container">
+        <input type="radio" name="circle" id="check1" checked />
+        <label for="check1" class="circle" id="c1"></label>
+        <input type="radio" name="circle" id="check2" />
+        <label for="check2" class="circle" id="c2"></label>
+        <input type="radio" name="circle" id="check3" />
+        <label for="check3" class="circle" id="c3"></label>
+        <div class="button"></div>
+        <div class="emoji"></div>
+        <div class="background"></div>
+      </form>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input[type="radio"] {
+        z-index: 5;
+        display: none;
+      }
+      .circle {
+        height: 62px;
+        width: 62px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid white;
+        z-index: 10;
+        cursor: pointer;
+      }
+      #check1 {
+        position: absolute;
+      }
+      #check2 {
+        position: absolute;
+      }
+      #check3 {
+        position: absolute;
+      }
+      .circle:not(:last-child) {
+        margin-right: 10px;
+      }
+      .button {
+        position: relative;
+        transform: translateX(-210px);
+        z-index: 50;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50%;
+        transition: all 1s ease;
+      }
+      #check1:checked ~ .button {
+        transform: translateX(-210px);
+      }
+      #check2:checked ~ .button {
+        transform: translateX(-138px);
+      }
+      #check3:checked ~ .button {
+        transform: translateX(-66px);
+      }
+      .emoji {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+      }
+      .emoji:after {
+        content: "🍍";
+      }
+      #check1:checked ~ .emoji:after {
+        content: "🍍";
+      }
+      #check2:checked ~ .emoji:after {
+        content: "🍐";
+      }
+      #check3:checked ~ .emoji:after {
+        content: "🍑";
+      }
+      .background {
+        position: absolute;
+        z-index: 0;
+        height: 100vh;
+        width: 100vw;
+        background: gold;
+        transition: all 1s ease;
+      }
+      #check1:checked ~ .background {
+        background-color: gold;
+      }
+      #check2:checked ~ .background {
+        background-color: green;
+      }
+      #check3:checked ~ .background {
+        background-color: coral;
+      }
+    </style>
+  </body>
+</html>

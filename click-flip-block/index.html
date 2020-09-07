@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
     <title>Scroll-to-Flip Box</title>
   </head>
   <body>
@@ -39,20 +43,20 @@
         const rotation = 90;
         if (clicks === 1) {
           cube.style.transform = `rotateX(${
-            rotation * clicks * 2
-          }deg) rotateY(-90deg)`;
+            rotation * clicks * 2 - 10
+          }deg) rotateY(-95deg)`;
         } else if (clicks === 2) {
           cube.style.transform = `rotateX(${
-            rotation * clicks * 2
-          }deg) rotateY(-90deg)`;
+            rotation * clicks * 2 - 10
+          }deg) rotateY(-95deg)`;
         } else if (clicks === 3) {
           cube.style.transform = `rotateY(${
-            rotation * clicks * 2
-          }deg) rotateX(90deg)`;
+            rotation * clicks * 2 - 10
+          }deg) rotateX(95deg)`;
         } else if (clicks === 4) {
-          cube.style.transform = `rotateY(180deg) rotateX(-90deg)`;
+          cube.style.transform = `rotateY(185deg) rotateX(-80deg)`;
         } else if (clicks === 5) {
-          cube.style.transform = `rotateY(0deg) rotateX(0deg)`;
+          cube.style.transform = `rotateY(5deg) rotateX(-5deg)`;
           clicks = 0;
         }
         clicks++;

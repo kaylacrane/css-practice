@@ -2,12 +2,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Acme", sans-serif;
 }
 .page {
+  border: 10px solid red;
   height: 400px;
   /* overflow-y: scroll; */
+  left: 20px;
+  top: 20px;
   width: 400px;
-  -webkit-perspective: 1000px;
+  -webkit-perspective: 600px;
   position: relative;
 
   /* transform-origin: center center; */
@@ -32,6 +36,8 @@
   transform: rotate3d(1, 0, 0, 90deg) translate(-50%, -50%);
 } */
 .cube div {
+  background-color: white;
+  border: 10px dashed black;
   text-align: center;
   font-size: 50px;
   width: 400px;
@@ -45,27 +51,27 @@
   /* -webkit-transform: translate(-50%, -50%); */
 }
 .cube .front {
-  background-color: blue;
+  /* background-color: blue; */
   -webkit-transform: rotateY(0deg) translateZ(200px);
 }
 .cube .back {
-  background-color: green;
+  /* background-color: green; */
   -webkit-transform: rotateX(180deg) translateZ(200px);
 }
 .cube .top {
-  background-color: purple;
+  /* background-color: purple; */
   -webkit-transform: rotateX(90deg) translateZ(200px) rotateZ(180deg);
 }
 .cube .bottom {
-  background-color: orange;
+  /* background-color: orange; */
   -webkit-transform: rotateX(-90deg) translateZ(200px) rotateZ(180deg);
 }
 .cube .left {
-  background-color: pink;
+  /* background-color: pink; */
   -webkit-transform: rotateX(180deg) rotateY(-90deg) translateZ(200px);
 }
 .cube .right {
-  background-color: red;
+  /* background-color: red; */
   -webkit-transform: rotateY(90deg) translateZ(200px);
 }
 .cube span {

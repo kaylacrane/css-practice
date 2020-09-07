@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="page">
+      <div class="emoji">🍍</div>
+      <div class="container">
+        <div class="circle" id="c1"><div class="button"></div></div>
+        <div class="circle" id="c2"></div>
+        <div class="circle" id="c3"></div>
+      </div>
+    </div>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .page {
+        height: 100vh;
+        width: 100vw;
+        background: gold;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .emoji {
+        margin-bottom: 80px;
+        font-size: 150px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .circle {
+        height: 62px;
+        width: 62px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+      .circle:not(:last-child) {
+        margin-right: 10px;
+      }
+      .button {
+        width: 50px;
+        height: 50px;
+        margin: 4px;
+        background: white;
+        border-radius: 50%;
+      }
+    </style>
+    <script>
+      const circles = document.querySelectorAll(".circle");
+      const button = document.querySelector(".button");
+      const page = document.querySelector(".page");
+      const emoji = document.querySelector(".emoji");
+
+      function moveButton(event) {
+        const clickedCircle = this;
+        const changes = {
+          c1: { color: "gold", radius: "50%", emoji: "🍍" },
+          c2: { color: "green", radius: "20px", emoji: "🍏" },
+          c3: { color: "coral", radius: "0", emoji: "🍊" },
+        };
+        clickedCircle.appendChild(button);
+
+        page.style.backgroundColor = changes[clickedCircle.id].color;
+        circles.forEach(
+          (circle) =>
+            (circle.style.borderRadius = changes[clickedCircle.id].radius)
+        );
+        button.style.borderRadius = changes[clickedCircle.id].radius;
+        emoji.innerHTML = changes[clickedCircle.id].emoji;
+      }
+
+      circles.forEach((circle) => circle.addEventListener("click", moveButton));
+    </script>
+  </body>
+</html>
