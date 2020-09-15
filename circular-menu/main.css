@@ -1,0 +1,76 @@
+.menu-opener {
+  display: none;
+}
+
+.menu-opener:checked ~ .link-one {
+  top: 65px;
+  left: 360px;
+}
+.menu-opener:checked ~ .link-two {
+  left: 450px;
+}
+.menu-opener:checked ~ .link-three {
+  top: 385px;
+  left: 360px;
+}
+.menu-opener:checked ~ .hamburger-icon {
+  opacity: 0;
+}
+.menu-opener:checked ~ .menu-opener-label:after {
+  transform: rotate(0deg);
+  top: 70px;
+}
+.menu-opener:checked ~ .menu-opener-label:before {
+  transform: rotate(-45deg);
+  top: 70px;
+}
+
+.menu-opener-label {
+  background: salmon;
+  width: 150px;
+  height: 150px;
+  display: block;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  z-index: 10;
+}
+.menu-opener-label:after {
+  position: absolute;
+  top: 70px;
+  left: 50px;
+  background: #000;
+  content: "";
+  width: 50px;
+  height: 10px;
+  transition: all 0.3s ease;
+  transform: rotate(90deg);
+}
+
+.hamburger-icon {
+  width: 50px;
+  height: 10px;
+  position: absolute;
+  top: 270px;
+  left: 250px;
+  background: #000;
+  z-index: 20;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/*  Popout circles */
+.link {
+  width: 100px;
+  height: 100px;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  top: 225px;
+  left: 225px;
+  background: #ecf0f1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
